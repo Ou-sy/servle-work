@@ -1,0 +1,264 @@
+/* header */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.menu {
+    width: 100%;
+    /* 投影片116 overflow */
+    overflow: hidden;
+    /* background-color: #55280b; */
+    background-color: white;
+    /* background: -webkit-linear-gradient(left top, #200101, #CC3366); */
+    list-style-type: none;
+    /* border-top-left-radius: 15px; */
+    /* border-top-right-radius: 15px; */
+    border-bottom: 3px solid black;
+    color: #cccccc;
+}
+
+.menu li {
+    float: right;
+    width: 7em;
+    border-right: 1px solid #dfcece;
+    display: block;
+    /* border: 1px solid red; */
+    margin-top: 15px;
+}
+
+.menu li a {
+    /* a為inline元素 無法直接使用text align屬性 */
+    display: block;
+    text-align: center;
+    /* text-decoration: none; */
+    color: #cccccc;
+    /* background-color: blue; */
+    /* line height 會自動上下置中 */
+    line-height: 2.5em;
+    color: #8B6257;
+}
+
+.wrapper {
+    /* background-color: gray; */
+    background-color: #fff;
+}
+
+.container {
+    background-color: #fff;
+}
+
+footer {
+    width: 100%;
+    /* background-color: #66b3ff; */
+    /* background: -webkit-linear-gradient(left top, #200101, #CC3366); */
+    background-color: white;
+    color: #8B6257;
+    line-height: 2.5em;
+    text-align: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.logo {
+    float: left;
+    /* line-height: 2.5em; */
+}
+
+.logoSp {
+    float: left;
+    font-size: 50px;
+    margin: 5px 5px;
+    font-family: "微軟正黑體";
+    color: #8B6257;
+    /* line-height: 2.5em; */
+}
+
+/* serch--------------------- */
+
+.divSerch {
+    float: left;
+    height: 65px;
+    /* line-height: 2.5em; */
+    /* border: black 2px solid; */
+    border-radius: 20px;
+    color: black;
+}
+
+.search-btn {
+    margin: 5px 0px;
+    /* display: block; */
+    width: 40px;
+    height: 50px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgb(226, 183, 171);
+}
+
+.search-txt {
+    width: 160px;
+    height: 60px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.search-btn img {
+    /* width: 20px; */
+    height: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* ----------------------------Section 1------------------------ */
+
+.section1 {
+    margin-top: 70px;
+}
+
+.section1 a img {
+    float: top;
+    margin: 5px auto;
+    width: 100%;
+}
+
+/* ----------------------------Section 2------------------------ */
+
+.section2 {
+    margin: 0px 5px 0px 0px;
+}
+
+.row_middle {
+    display: flex;
+    justify-content: space-between;
+    /* justify-content: space-around; */
+}
+
+.SLShow {
+    height: 300px;
+    /* background-color: blue; */
+}
+
+.SLShow a img {
+    width: 600px;
+    height: 300px;
+}
+
+.book_2 {
+    /* background-color: red; */
+    height: 300px;
+}
+
+.book_3 {
+    /* background-color: yellow; */
+    height: 300px;
+}
+
+/* section3----------------------------------- */
+
+.section3 {
+    margin: 5px auto;
+}
+
+.section3 img {
+    width: 200px;
+    height: 270px;
+}
+
+.section3 a {
+    margin: 5px auto;
+}
+
+.section3 tr td {
+    text-align: center;
+    border: solid white 8px;
+}
+
+.section3 tr td a img {
+    margin: auto;
+    width: 100%;
+}
+
+/* slide-------------- */
+
+.slide {
+    width: 600px;
+    overflow: hidden;
+    height: 300px;
+    background: #000;
+    position: relative;
+}
+
+.slide ul.slide_img {
+    left: 0;
+    position: absolute;
+    /*width:2400px;*/
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.slide ul.slide_img li {
+    width: 600px;
+    float: left;
+    height: 300px;
+    list-style: none;
+}
+
+.slide ul.slide_img li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide ul.slide_node {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+.slide ul.slide_node li {
+    margin: 0 5px;
+    display: inline-block;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 5px #000 inset;
+}
+
+.slide ul.slide_node li:hover, .slide ul.slide_node li.active {
+    background: skyblue;
+}
+
+.dir_btn {
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    color: #fff;
+    z-index: 10;
+    font-size: 24px;
+    opacity: .5;
+    cursor: pointer;
+}
+
+.dir_btn:hover {
+    opacity: .8;
+    text-decoration: none;
+    color: #fff;
+}
+
+.glyphicon-chevron-left {
+    left: 5px;
+}
+
+.glyphicon-chevron-right {
+    right: 5px;
+}
