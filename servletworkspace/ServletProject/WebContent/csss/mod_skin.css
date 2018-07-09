@@ -1,0 +1,165 @@
+/*========================module-contour-default========================*/
+/*=====mc001=====*/
+.mc001 .inner {
+	border:solid #c0c0c0;
+	border-width:1px;
+}
+.mc001 .top b,
+.mc001 .bottom b {
+	background-image:url(images/mc001.gif);
+	width:9px;
+	height:9px;
+}
+.mc001 .hd h3,
+.mc001 .bd,
+.mc001 .ft {
+	/*temp no need*/
+}
+.mc001 .bl,
+.mc001 .br {
+	bottom:9px;
+}
+/*mc001 @ cate001*/
+.cate001 .mc001 .inner {
+	/*temp no need*/
+}
+.cate001 .mc001 .top b,
+.cate001 .mc001 .bottom b {
+	/*temp no need*/
+}
+
+/*=====mc002=====*/
+.mc002 .inner {
+	border:solid #c0c0c0;
+	border-width:1px;
+}
+.mc002 .top b,
+.mc002 .bottom b {
+	background-image:url(images/mc002.gif);
+}
+.mc002 .tl,
+.mc002 .tr,
+.mc002 .bl,
+.mc002 .br {
+	width:5px;
+	height:5px;
+}
+.mc002 .bl,
+.mc002 .br {
+	bottom:5px;
+}
+.mc002 .hd h3,
+.mc002 .bd,
+.mc002 .ft {
+	/*temp no need*/
+}
+
+/*=====mc003=====*/
+.mc003{
+	margin-right:3px;
+	margin-left:2px;
+}
+
+.mc003 .inner{
+	border-top:4px solid #d0d0d0;
+	border-right:1px solid #d0d0d0;
+	border-bottom:2px solid #d0d0d0;
+	border-left:1px solid #afafaf;
+	background:#ffffff;
+}
+
+.mc003 .top b,
+.mc003 .bottom b{
+	background-image:url(images/mc003.gif);
+	width:8px;
+	height:8px;
+}
+
+.mc003 .tl,
+.mc003 .tr,
+.mc003 .bl,
+.mc003 .br{
+	width:8px;
+	height:8px;
+}
+
+.mc003 .bl,
+.mc003 .br{
+	bottom:8px;
+}
+
+.mc003 .hd h3,
+.mc003 .bd,
+.mc003 .ft{
+}
+
+/*========================tab========================*/
+/*=====tab modules=====*/
+.tab001 li, .tab001 li a {
+    background-image: url(images/tab001.gif)
+}
+
+.tab001 li a {
+    padding-top: 9px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-position: 100% -100px;
+    color: #000
+}
+
+.tab001 .here {
+    background-position: 0 -200px
+}
+
+.tab001 .here a {
+    background-position: 100% -300px
+}
+/*
+.cate001 .tab001 .here {
+    background-position: 0 -400px
+}
+
+.cate001 .tab001 .here a {
+    background-position: 100% -500px;
+    color: #fff
+}
+
+.cate002 .tab001 .here {
+    background-position: 0 -600px
+}
+
+.cate002 .tab001 .here a {
+    background-position: 100% -700px;
+    color: #fff
+}
+
+.cate003 .tab001 .here {
+    background-position: 0 -800px
+}
+
+.cate003 .tab001 .here a {
+    background-position: 100% -900px;
+    color: #000
+}
+*/
+/*=====tab flag=====*/
+.tabflag001 span {
+    background-position: 50% 0;
+    top: -18px;
+    width: 100%;
+    height: 31px
+}
+
+.tabflag002 span {
+    background-position: 50% -40px;
+    top: -17px;
+    width: 100%;
+    height: 31px
+}
+
+.tabflag003 span {
+    background-position: 50% -80px;
+    top: -15px;
+    width: 100%;
+    height: 21px
+}
