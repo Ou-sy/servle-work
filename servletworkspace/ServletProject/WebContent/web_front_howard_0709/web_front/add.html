@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>書籍上架</title>
+    <style>
+        form {
+            width: 500px;
+            border: 1px solid black;
+            border-radius: 20px;
+            margin: 15px;
+            background-color: lightblue;
+        }
+
+        label {
+            width: 450px;
+            margin: 20px;
+            padding-bottom: 10px;
+        }
+
+        .txt {
+            font-size: 80%;
+            margin: 20px;
+            width: 450px;
+            color: gray;
+        }
+        .require{
+            color:red;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div>
+    <form>
+        <legend style="background-color: lightblue;">基本資料</legend>
+        <div class="">
+            <label >中文書名：</label>
+            <input type="text" name="bookNameZh" placeholder="中文書名" autocomplete="off" size="20" required><span class="require">*必填</span>
+            <span id="idsp"></span>
+            <br>
+            <span class="txt">中文書名，如「哈利波特 3: 阿茲卡班的逃犯」</span>
+            <hr>
+            <label >外文書名：</label>
+            <input type="text" name="bookNameOri" placeholder="原文書名" autocomplete="off" size="20">
+            <span id="idsp"></span>
+            <br>
+            <span class="txt">原文書名，如「Harry Potter and the Prisoner of Azkaban」</span>
+            <hr>
+            <label >中文作者姓名：</label>
+            <input type="text" name="authorZh" placeholder="中文作者名" autocomplete="off" size="20" required><span class="require">*必填</span>
+            <span id="idsp"></span>
+            <br>
+            <span class="txt">作者中文姓名，如「J. K. 羅琳」</span>
+            <hr>
+            <label >外文作者姓名：</label>
+            <input type="text" name="authorOri" placeholder="外文作者名" autocomplete="off" size="20">
+            <span id="idsp"></span>
+            <br>
+            <span class="txt">作者中文姓名，如「J. K. Rowling」</span>
+            <hr>
+            <label >中文譯者姓名：</label>
+            <input type="text" name="translatorZh" placeholder="中文譯者名" autocomplete="off" size="20">
+            <span id="idsp"></span>
+            <br>
+            <span class="txt">譯者中文姓名，如「彭倩文」</span>
+            <hr>
+            <label >外文譯者姓名：</label>
+            <input type="text" name="translatorOri" placeholder="外文譯者名" autocomplete="off" size="20">
+            <span id="idsp"></span>
+            <br>
+            <span class="txt">【備註欄】</span>
+            <hr>
+            <label >出版社：</label>
+            <input type="text" name="bookPublisher" placeholder="出版社" autocomplete="off" size="20" required><span class="require">*必填</span>
+            <span id="idsp"></span>
+            <br>
+            <span class="txt">【備註欄】</span>
+            <hr>
+            <label >ISBN：</label>
+            <input type="text" name="bookIsbn" placeholder="ISBN" autocomplete="off" size="20" required><span class="require">*必填</span>
+            <span id="idsp"></span>
+            <br>
+            <span class="txt">【備註欄】</span>
+            <hr>
+        </div>
+    </form>
+    <form>
+        <legend style="background-color: lightblue;">基本資料</legend>
+        <div class="">
+            <label >書籍語言：</label>
+            <input type="text" name="bookLang" placeholder="書籍語言" autocomplete="off" size="20" required><span class="require">*必填</span>
+            <span id="idsp"></span>
+            <br>
+            <span class="txt">【備註欄】</span>
+            <hr>
+            <label >書籍系列：</label>
+            <input type="text" name="bookSeries" placeholder="書籍系列" autocomplete="off" size="20">
+            <span id="idsp"></span>
+            <br>
+            <span class="txt">【備註欄】</span>
+            <hr>
+            <label >出版日期：</label>
+            <input type="date" name="bookPublishDate" placeholder="出版日期" autocomplete="off" size="20" required><span class="require">*必填</span>
+            <span id="idsp"></span>
+            <br>
+            <span class="txt">【備註欄】</span>
+            <hr>
+            <label >書籍頁數：</label>
+            <input type="text" name="bookPages" placeholder="書籍頁數" autocomplete="off" size="20" required><span class="require">*必填</span>
+            <span id="idsp"></span>
+            <br>
+            <span class="txt">【備註欄】</span>
+            <hr>
+            <label >書籍版次：</label>
+            <input type="text" name="bookVersion" placeholder="書籍版次" autocomplete="off" size="20" required><span class="require">*必填</span>
+            <span id="idsp"></span>
+            <br>
+            <span class="txt">【備註欄】</span>
+            <hr>
+            <label >書本尺寸：</label>
+            <input type="text" name="bookSize" placeholder="書本尺寸" autocomplete="off" size="20"><span class="require">*必填</span>
+            <span id="idsp"></span>
+            <br>
+            <span class="txt">【備註欄】</span>
+            <hr>
+            <label >書籍重量：</label>
+            <input type="text" name="bookWeight" placeholder="書籍重量" autocomplete="off" size="20"><span class="require">*必填</span>
+            <span id="idsp"></span>
+            <br>
+            <span class="txt">【備註欄】</span>
+            <hr>
+            <label >平裝/精裝：</label>
+            <select name="bookSkin">
+                <option value="HardCover">精裝</option>
+                <option value="SoftCover">平裝</option>
+            </select><span class="require">*必填</span>
+            <span id="idsp"></span>
+            <br>
+            <span class="txt">【備註欄】</span>
+        </div>
+    </form>
+    <form>
+        <legend style="background-color: lightblue;">基本資料</legend>
+        <div class="">
+            <label >書籍簡介：</label>
+            <input type="text" name="bookNameZh" placeholder="書籍簡介" autocomplete="off" size="20"><span class="require">*必填</span>
+            <textarea cols="40" rows="20"></textarea>
+            <span id="idsp"></span>
+            <br>
+            <span class="txt">中文書名，如「哈利波特 3: 阿茲卡班的逃犯」</span>
+            <hr>
+            <label>封面圖片：</label>
+            <input type="file"> 
+            <hr>
+        </div>
+        <div style="margin-left: 30%;">
+                <input class="button" type="submit" value="【送出】">
+                <input class="button" type="reset" value="【清除】">
+            </div>
+    </form>
+</div>
+</body>
+
+</html>
