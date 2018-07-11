@@ -1,0 +1,124 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>JavaScript+CSS折疊、合攏的多級功能表_網頁代碼站(www.webdm.cn)</title>
+  <style>
+    *,
+    body,
+    ul,
+    li,
+    h1,
+    h2 {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    body {
+      font: 12px "宋體";
+      padding-top: 20px;
+    }
+
+    #menu {
+      width: 200px;
+      margin: auto;
+    }
+
+    #menu h1 {
+      cursor: pointer;
+      color: #FFF;
+      font-size: 12px;
+      padding: 5px 0 3px 10px;
+      border: #C60 1px solid;
+      margin-top: 1px;
+      background-color: #F93;
+    }
+
+    #menu h2 {
+      cursor: pointer;
+      color: #777;
+      font-size: 12px;
+      padding: 5px 0 3px 10px;
+      border: #E7E7E7 1px solid;
+      border-top-color: #FFF;
+
+      background-color: #F4F4F4;
+    }
+
+    #menu ul {
+      padding-left: 15px;
+      height: 50px;
+      border: #E7E7E7 1px solid;
+      border-top: none;
+      overflow: auto;
+    }
+
+    #menu ul li {
+      padding: 5px 0 3px 10px;
+    }
+
+    .no {
+      display: none;
+    }
+  </style>
+  <script language="JavaScript">
+
+    function ShowMenu(obj, noid) {
+      var block = document.getElementById(noid);
+      var n = noid.substr(noid.length - 1);
+      if (noid.length == 4) {
+        var ul = document.getElementById(noid.substring(0, 3)).getElementsByTagName("ul");
+        var h2 = document.getElementById(noid.substring(0, 3)).getElementsByTagName("h2");
+        for (var i = 0; i < h2.length; i++) {
+          h2[i].innerHTML = h2[i].innerHTML.replace("-", "+");
+          h2[i].style.color = "";
+        }
+        obj.style.color = "#FF0000";
+        for (var i = 0; i < ul.length; i++) { if (i != n) { ul[i].className = "no"; } }
+      } else {
+        var span = document.getElementById("menu").getElementsByTagName("span");
+        var h1 = document.getElementById("menu").getElementsByTagName("h1");
+        for (var i = 0; i < h1.length; i++) {
+          h1[i].innerHTML = h1[i].innerHTML.replace("-", "+");
+          h1[i].style.color = "";
+        }
+        obj.style.color = "#0000FF";
+        for (var i = 0; i < span.length; i++) { if (i != n) { span[i].className = "no"; } }
+      }
+      if (block.className == "no") {
+        block.className = "";
+        obj.innerHTML = obj.innerHTML.replace("+", "-");
+      } else {
+        block.className = "no";
+        obj.style.color = "";
+      }
+    }
+
+  </script>
+
+</head>
+
+<body>
+  <div id="menu">
+    <h1 onClick="javascript:ShowMenu(this,'NO0')"> - 後臺管理選單</h1>
+    <span id="NO0">
+      <h2 onClick="javascript:ShowMenu(this,'NO00')"> - 產品管理</h2>
+      <ul id="NO00">
+        <li>產品上架</li>
+        <li>產品下架</li>
+      </ul>
+      <h2 onClick="javascript:ShowMenu(this,'NO01')"> - 會員管理</h2>
+      <ul id="NO01">
+        <li>密碼重設</li>
+        <li>個資查詢</li>
+      </ul>
+      <h2 onClick="javascript:ShowMenu(this,'NO02')"> - 訂單管理</h2>
+      <ul id="NO02">
+        <li>訂單查詢</li>
+      </ul>
+    </span>
+
+  </div>
+</body>
+
+</html>

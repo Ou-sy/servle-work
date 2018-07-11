@@ -15,76 +15,138 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/book.js"></script>
+    <style>
+        .sc1 {
+            width: 1000px;
+            /* padding-top: 5%; */
+            margin: 20px auto auto auto;
+        }
+
+        .booktitle {
+            padding-top: 5%;
+            color: #8B6257;
+        }
+
+        .list {
+            list-style: square;
+            color: #8B6257;
+        }
+
+        .bookimg {
+            float: left;
+            width: 230px;
+            height: 320px;
+        }
+
+        .bookimg img {
+            max-height: 300px;
+            max-width: 210px;
+            margin: 10px
+        }
+
+        .sc2 {
+            float: left;
+            margin: 0 10% 10% 10%;
+        }
+
+        .sc2 h4 {
+            color: #8B6257;
+            font-weight: bold;
+        }
+
+        .content {
+            margin-left: 5%;
+        }
+    </style>
+
 </head>
 
 <body>
-    <div>
-        <header>
-            <nav>
-                <ul class="menu">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="images/ReadShareLOGO.png" alt="">
-                        </a>
-                    </div>
-                    <div class="logoSp">享讀</div>
-                    <div class="divSerch">
-                        <form action="get">
-                            <span>
-                                <input class="search-txt" type="text" placeholder="  搜尋書名/作者/ISBN">
-                                <!-- <input type="submit" name="" id="" value="搜尋"> -->
-                                <span>書名</span>
-                                <input type="radio" name="tag" id="" checked="true">
-                                <span>作者</span>
-                                <input type="radio" name="tag" id="">
-                                <span>ISBN</span>
-                                <input type="radio" name="tag" id="">
-                            </span>
+    <div class="wrapper">
+        <div class="container">
+            <header>
+                <nav>
+                    <ul class="menu">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="images/ReadShareLOGO.png" alt="">
+                            </a>
+                        </div>
+                        <div class="logoSp">享讀</div>
+                        <div class="divSerch">
+                            <form action="get">
+                                <span>
+                                    <input class="search-txt" type="text" placeholder="  搜尋書名/作者/ISBN">
+                                    <!-- <input type="submit" name="" id="" value="搜尋"> -->
+                                    <span>書名</span>
+                                    <input type="radio" name="tag" id="" checked="true">
+                                    <span>作者</span>
+                                    <input type="radio" name="tag" id="">
+                                    <span>ISBN</span>
+                                    <input type="radio" name="tag" id="">
+                                </span>
 
-                            <button class="search-btn" type="submit">
-                                <img src="images/searchBT.png" alt="">
-                            </button>
-                        </form>
-                    </div>
+                                <button class="search-btn" type="submit">
+                                    <img src="images/searchBT.png" alt="">
+                                </button>
+                            </form>
+                        </div>
 
-                    <li>
-                        <a href="">
-                            <img style="height:30px" src="images/cart_enpty.png" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">會員中心</a>
-                    </li>
-                    <li>
-                        <a href="">登入</a>
-                    </li>
-                    <li>
-                        <a href="">註冊</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-
-        <section class="section1" style="border-color:3px solid brown;margin-left:5%;margin-right:5%;">
-            <div>
-                <h3 style="color:black">小護士：LINE的一萬則不讀不回</h3>
-                <h4 style="color:black"> Ten Thousand loves from nurse. </h4>
-            </div>
-            <hr>
-            <div style="float: left;width:230px;height: 320px;margin-left:5%;">
-                <img src="images/book/bk12_210x315.jpg" style="max-height:300px;max-width:210px;margin: 10px">
-            </div>
-
-            <div style="float:left; width:300px; margin:0 0 0 50px;">
-                <div>
-                    <ul>
-                        <li style="list-style: square">作者：Ronnie</li>
-                        <li style="list-style: square">出版社：改桌面出版社</li>
-                        <li style="list-style: square">語言：繁體中文 </li>
-                        <li style="list-style: square">出版日期：2018/07/08</li>
-                        <li style="list-style: square">定價：250元</li>
+                        <li>
+                            <a href="">
+                                <img style="height:30px" src="images/cart_enpty.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">會員中心</a>
+                        </li>
+                        <li>
+                            <a href="">登入</a>
+                        </li>
+                        <li>
+                            <a href="">註冊</a>
+                        </li>
                     </ul>
+                </nav>
+            </header>
+
+            <section class="sc1">
+                <div>
+                    <div class="booktitle">
+                        <h3 name="bookNameZh">小護士：LINE的一萬則不讀不回</h3>
+                        <h4 name="bookNameOri"> Ten Thousand loves from nurse. </h4>
+                    </div>
+                    <hr>
+                    <div class="bookimg">
+                        <img name="bookImg" src="images/book/bk12_210x315.jpg">
+                    </div>
+
+                    <div style="float:left; width:300px; margin:40px 0 0 50px;">
+                        <div>
+                            <ul>
+                                <li class="list" name="authorZh">作者：Ronnie</li>
+                                <li class="list" name="authorOri">出版社：改桌面出版社</li>
+                                <li class="list" name="bookLang">語言：繁體中文 </li>
+                                <li class="list" name="bookPublishDate">出版日期：2018/07/08</li>
+                                <li class="list" name="bookPrice">定價：250元</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="float: right;width:200px;height: 320px;margin-right:5%;">
+                        <img src="images/cart_cargo.png" style="border:#8B6257 solid 3px" margin: "auto";>
+                        <div style="width:150px;margin:10px auto auto auto">
+                            <span style="color:green;">庫存數量：>30本</span>
+                            </br>
+                            <span style="color:orange;">庫存數量：>10本</span>
+                            </br>
+                            <span style="color:red;">庫存數量：=5本</span>
+                            </br>
+                            <span style="color:red;">庫存數量：缺貨中</span>
+                        </div>
+                    </div>
                 </div>
+<<<<<<< HEAD
             </div>
             <div style="float: right;width:200px;height: 320px;margin-right:5%">
                 <img src="images/cart_cargo.png">
@@ -100,10 +162,15 @@
         </section>
         <section style="float: left;margin:100px 10% 10% 10%;">
             <div>
+=======
+            </section>
+            <section class="sc2">
+>>>>>>> ed051ee2ecce005825632825371157f1f047a6f6
                 <div>
                     <div>
-                        <h4>內容簡介book_intro</h4>
-                            <div class="content" style="margin-left: 5%;">
+                        <div>
+                            <h4 name="bookIntro">內容簡介book_intro</h4>
+                            <div class="content">
                                 <strong>　找出致病關鍵，徹底改善飲食與生活習慣</strong>
                                 <br>
                                 <br> 　　血膽固醇和三酸甘油酯偏高導致現代社會的富貴病，患有高血脂症的患者可能不會表現出明顯的症狀，同時除家族性高血脂症外，其他類型的高血脂症發展成冠心病、腦中風需要一定的時間，所以人們很容易忽視高血脂症的危害。
@@ -114,83 +181,71 @@
                                 <br>
                                 <br> 　　趕走壞的膽固醇、三酸甘油酯，暢通血管，掌握健康靠自己！
                                 <br> 　　改善高血脂的飲食療法，遠離心血管疾病
+                            </div>
+                        </div>
+                        <hr>
+                        <div>
+                            <h4 name="authorIntro">作者介紹</h4>
+                            <div class="content">
+                                <strong>Ronnie</strong>
+                                <br>
+                                <br> 　　．專業保健醫生
+                                <br> 　　．著名醫學家，畢業於第二醫科大學醫療系。現為專職醫療保健醫生，被譽為「有突出貢獻的醫學家」。
+                                <br>
+                            </div>
+                        </div>
+                        <hr>
+                        <h4 name="translatorIntro">譯者介紹</h4>
+                        <div>
+                            <div class="content">
+                                <strong>HOWARD譯者</strong>
+                                <br>
+                                <br> 　　．專業保健醫生
+                                <br> 　　．著名醫學家，畢業於第二醫科大學醫療系。現為專職醫療保健醫生，被譽為「有突出貢獻的醫學家」。
+                                <br>
+                            </div>
                         </div>
                     </div>
                     <hr>
                     <div>
-                        <h4>作者介紹</h4>
-                        <div class="content" style="margin-left: 5%;">
-                            <strong>Ronnie</strong>
-                            <br>
-                            <br> 　　．專業保健醫生
-                            <br> 　　．著名醫學家，畢業於第二醫科大學醫療系。現為專職醫療保健醫生，被譽為「有突出貢獻的醫學家」。
-                            <br>
-                        </div>
-                    </div>
-                    <hr>
-                    <h4>譯者介紹</h4>
-                    <div>
-                        <div class="content" style="margin-left: 5%;">
-                            <strong>HOWARD譯者</strong>
-                            <br>
-                            <br> 　　．專業保健醫生
-                            <br> 　　．著名醫學家，畢業於第二醫科大學醫療系。現為專職醫療保健醫生，被譽為「有突出貢獻的醫學家」。
-                            <br>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div>
-                    <h4>目錄</h4>
-                    <div style="margin-left: 5%;">
-                        <strong>PART 01　了解高血脂症才能安全降血脂</strong>
-                        <br> 認識高血脂症
-                        <br> ‧高血脂症的概念
-                        <br> ‧高血脂症的分類
-                        <br>
-                        <strong>PART 02　降血脂吃什麼？怎麼吃？</strong>
-                        <br> 蕎麥：蕎麥涼麵／小米燕蕎粥
-                        <br> 燕麥：燕麥二米飯／紫薯麥片粥
-                    </div>
-                </div>
-                <hr>
-                <div>
-                    <h4>詳細資料</h4>
-                    <div style="margin-left: 5%;">
-                        <ul>
-                            <li style="list-style: square">作者姓名Author_zh (作者原名Author_ori)</li>
-                            <li style="list-style: square">譯者姓名Translator_zh (譯者原名Translator_ori)</li>
-                            <li style="list-style: square">出版社Book_publisher</li>
-                            <li style="list-style: square">書籍系列Book_series</li>
-                            <li style="list-style: square">出版日期Book_publish_date</li>
-                            <li style="list-style: square">頁數Book_pages</li>
-                            <li style="list-style: square">書籍版次Book_version</li>
-                            <li style="list-style: square">書本大小Book_size</li>
-                            <li style="list-style: square">裝訂方法Book_skin</li>
-                            <li style="list-style: square">書籍重量Book_weight</li>
-                            <li style="list-style: square">Book_ISBN：9789865611767</li>
-                            <li style="list-style: square">叢書系列：健康大講堂</li>
-                            <li style="list-style: square">規格：平裝 / 208頁 / 17 x 23 cm / 普通級 / 全彩印刷 / 初版</li>
-                            <li style="list-style: square">出版地：台灣 </li>
-                        </ul>
-                    </div>
-                </div>
-                <hr>
-                <div>
-                    <h4>內容連載</h4>
-                    <div style="margin-left: 5%;">
+                        <h4 name="bookMenu">目錄</h4>
                         <div class="content">
-                            <strong>能幫助降血脂的13種營養素</strong>
+                            <strong>PART 01　了解高血脂症才能安全降血脂</strong>
+                            <br> 認識高血脂症
+                            <br> ‧高血脂症的概念
+                            <br> ‧高血脂症的分類
                             <br>
-                            <br>高血脂症患者除了要合理進食脂肪、蛋白質、醣類這三大營養外，還需要適當攝取有助於降低血脂的營養素。
-                            <br>
-                            <br> 1. 膳食纖維：膳食纖維進入胃部後體積會膨脹，易使人產生飽足感，可使食物停留在胃部的時間增長，並減緩消化作用；其進入腸道後，可增加糞便量，刺激大腸壁肌肉蠕動，並因其具有保水作用而使糞便溼潤柔軟，迅速排出體外，減少身體對膽固醇的吸收。同時，膳食纖維還可吸附膽酸，促進膽鹽排泄，降低血液中膽固醇含量，干擾膽固醇被人體吸收。
+                            <strong>PART 02　降血脂吃什麼？怎麼吃？</strong>
+                            <br> 蕎麥：蕎麥涼麵／小米燕蕎粥
+                            <br> 燕麥：燕麥二米飯／紫薯麥片粥
                         </div>
                     </div>
+                    <hr>
+                    <div>
+                        <h4>詳細資料</h4>
+                        <div class="content">
+                            <ul>
+                                <li class="list" name="authorZhOri">作者姓名Author_zh (作者原名Author_ori)</li>
+                                <li class="list" name="translatorZhOri">譯者姓名Translator_zh (譯者原名Translator_ori)</li>
+                                <li class="list" name="bookPublisher">出版社Book_publisher</li>
+                                <li class="list" name="bookSeries">書籍系列Book_series</li>
+                                <li class="list" name="bookPublishDate">出版日期Book_publish_date</li>
+                                <li class="list" name="bookPages">頁數Book_pages</li>
+                                <li class="list" name="bookVersion">書籍版次Book_version</li>
+                                <li class="list" name="bookSize">書本大小Book_size</li>
+                                <li class="list" name="bookSkin">裝訂方法Book_skin</li>
+                                <li class="list" name="bookWeight">書籍重量Book_weight</li>
+                                <li class="list" name="bookIsbn">Book_ISBN：9789865611767</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
+        </div>
         </section>
     </div>
+    </div>
+
 </body>
 
 </html>
