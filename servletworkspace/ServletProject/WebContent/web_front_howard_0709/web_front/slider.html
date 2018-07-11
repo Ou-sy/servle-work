@@ -1,56 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script type='text/javascript'>
-        function isHidden(oDiv) {
-          var vDiv = document.getElementById(oDiv);//div id用于折疊主體
-          vDiv.style.display = (vDiv.style.display == 'none')?'block':'none';//反轉
-          var oDiv1 = oDiv + '1';
-          var vDiv1 = document.getElementById(oDiv1);//div id1用于折疊狀态顯示展開的+号
-          vDiv1.style.display = (vDiv1.style.display == 'none')?'block':'none';//反轉
-          var oDiv2 = oDiv + '2';
-          var vDiv2 = document.getElementById(oDiv2);//div id2用于展開狀态顯示折疊的-号
-          vDiv2.style.display = (vDiv2.style.display == 'none')?'block':'none';//反轉
+  <title>JavaScript+CSS折疊、合攏的多級功能表_網頁代碼站(www.webdm.cn)</title>
+  <style>
+    *,
+    body,
+    ul,
+    li,
+    h1,
+    h2 {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    body {
+      font: 12px "宋體";
+      padding-top: 20px;
+    }
+
+    #menu {
+      width: 200px;
+      margin: auto;
+    }
+
+    #menu h1 {
+      cursor: pointer;
+      color: #FFF;
+      font-size: 12px;
+      padding: 5px 0 3px 10px;
+      border: #C60 1px solid;
+      margin-top: 1px;
+      background-color: #F93;
+    }
+
+    #menu h2 {
+      cursor: pointer;
+      color: #777;
+      font-size: 12px;
+      padding: 5px 0 3px 10px;
+      border: #E7E7E7 1px solid;
+      border-top-color: #FFF;
+
+      background-color: #F4F4F4;
+    }
+
+    #menu ul {
+      padding-left: 15px;
+      height: 50px;
+      border: #E7E7E7 1px solid;
+      border-top: none;
+      overflow: auto;
+    }
+
+    #menu ul li {
+      padding: 5px 0 3px 10px;
+    }
+
+    .no {
+      display: none;
+    }
+  </style>
+  <script language="JavaScript">
+
+    function ShowMenu(obj, noid) {
+      var block = document.getElementById(noid);
+      var n = noid.substr(noid.length - 1);
+      if (noid.length == 4) {
+        var ul = document.getElementById(noid.substring(0, 3)).getElementsByTagName("ul");
+        var h2 = document.getElementById(noid.substring(0, 3)).getElementsByTagName("h2");
+        for (var i = 0; i < h2.length; i++) {
+          h2[i].innerHTML = h2[i].innerHTML.replace("-", "+");
+          h2[i].style.color = "";
         }
-      </script>
+        obj.style.color = "#FF0000";
+        for (var i = 0; i < ul.length; i++) { if (i != n) { ul[i].className = "no"; } }
+      } else {
+        var span = document.getElementById("menu").getElementsByTagName("span");
+        var h1 = document.getElementById("menu").getElementsByTagName("h1");
+        for (var i = 0; i < h1.length; i++) {
+          h1[i].innerHTML = h1[i].innerHTML.replace("-", "+");
+          h1[i].style.color = "";
+        }
+        obj.style.color = "#0000FF";
+        for (var i = 0; i < span.length; i++) { if (i != n) { span[i].className = "no"; } }
+      }
+      if (block.className == "no") {
+        block.className = "";
+        obj.innerHTML = obj.innerHTML.replace("+", "-");
+      } else {
+        block.className = "no";
+        obj.style.color = "";
+      }
+    }
+
+  </script>
+
 </head>
+
 <body>
-        <fieldset>
-                <legend style="cursor:hand" onclick="isHidden('div_first_part')">
-                  第一塊（默認展開）标題
-                  <span style='float:right; display:none;' id='div_first_part1'>+&nbsp</span>
-                  <span style='float:right; display:block;' id='div_first_part2'>-&nbsp</span>
-                </legend>
-                <div style='display:block;' id='div_first_part'>
-                  <ul>
-                    <li>第一塊 第一行</li>
-                    <li>第一塊 第二行</li>
-                    <li>第一塊 第三行</li>
-                    <li>第一塊 第四行</li>
-                    <li>第一塊 第五行</li>
-                  </ul>
-                </div>
-              </fieldset>
-              
-              <fieldset>
-                <legend style="cursor:hand" onclick="isHidden('div_second_part')">
-                  第二塊（默認折疊）标題
-                  <span style='float:right; display:block;' id='div_second_part1'>+&nbsp</span>
-                  <span style='float:right; display:none;' id='div_second_part2'>-&nbsp</span>
-                </legend>
-                <div style='display:none;' id='div_second_part'>
-                  <ul>
-                    <li>第二塊 第一行</li>
-                    <li>第二塊 第二行</li>
-                    <li>第二塊 第三行</li>
-                    <li>第二塊 第四行</li>
-                    <li>第二塊 第五行</li>
-                  </ul>
-                </div>
-              </fieldset>
+  <div id="menu">
+    <h1 onClick="javascript:ShowMenu(this,'NO0')"> - 後臺管理選單</h1>
+    <span id="NO0">
+      <h2 onClick="javascript:ShowMenu(this,'NO00')"> - 產品管理</h2>
+      <ul id="NO00">
+        <li>產品上架</li>
+        <li>產品下架</li>
+      </ul>
+      <h2 onClick="javascript:ShowMenu(this,'NO01')"> - 會員管理</h2>
+      <ul id="NO01">
+        <li>密碼重設</li>
+        <li>個資查詢</li>
+      </ul>
+      <h2 onClick="javascript:ShowMenu(this,'NO02')"> - 訂單管理</h2>
+      <ul id="NO02">
+        <li>訂單查詢</li>
+      </ul>
+    </span>
+
+  </div>
 </body>
+
 </html>
