@@ -204,8 +204,7 @@ public class WorkDAO implements IWorkDAO {
 	//7.先看一下查詢結果
 	@Override
 	public void closeConn() throws SQLException {
-		conn.close();
-		System.out.println("-[8.資料庫已離線]");
+		
 	}
 	//8.結束連線
 }
