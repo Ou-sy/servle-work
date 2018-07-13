@@ -54,16 +54,17 @@ public class bookDAO implements IBookDAO, Serializable {
 		return bookId1;
 	}
 
-	// 3.從SQL查詢資料
+	// 3.從SQL查詢書籍資料
 	@Override
-	public List<bookBean> getAll(String search) {
+	public List<bookBean> getBook(String search) {
 		bookBean bB = null;
 		List<bookBean> bookData = new ArrayList<bookBean>();
 
 		try {
 
-			PreparedStatement pstmt = conn
-					.prepareStatement("SELECT * FROM Product WHERE Product_ID = '" + search + "'");
+			PreparedStatement pstmt = conn.prepareStatement(
+					"SELECT Product.Product_ID,Product.Book_ISBN,Product.product_name,Product.Book_name_zh,Product.Book_name_ori,Product.Author_zh,Product.Author_ori,Product.Translator_zh,Product.Translator_ori,Product.Book_lang,Product.Book_publisher,Product.Book_publish_date,Product.Book_price,Product.Book_stockNum,Product.Book_series,Product.Book_pages,Product.Book_version,Product.Book_size,Product.Book_weight,Product.Product_img,Product.Book_skin,Product.book_menu,Product.book_intro,Product.Book_tag,Product.E_book_file,Author.Intro_Author FROM Product JOIN ProductAuthor ON Product.Product_ID = ProductAuthor.Product_ID JOIN Author ON ProductAuthor.Author_ID = Author.Author_ID WHERE Product.Product_ID =  '"
+							+ search + "'");
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				bB = new bookBean();
@@ -90,6 +91,7 @@ public class bookDAO implements IBookDAO, Serializable {
 				bB.setBook_skin(rs.getString("Book_skin"));
 				bB.setBook_menu(rs.getString("Book_menu"));
 				bB.setBook_intro(rs.getString("Book_intro"));
+				bB.setBook_intro(rs.getString("Intro_Author"));
 				bookData.add(bB);
 			}
 		} catch (SQLException e) {
@@ -105,10 +107,6 @@ public class bookDAO implements IBookDAO, Serializable {
 		return bookData;
 	}
 
-	// 4以JSON格式匯出查詢結果
-
-	// 7.先看一下查詢結果
-	@Override
 	public void printResult(List<bookBean> bookData) {
 		for (bookBean temp : bookData) {
 			System.out.print(temp.getProduct_ID() + ",");
@@ -134,6 +132,7 @@ public class bookDAO implements IBookDAO, Serializable {
 			System.out.print(temp.getBook_skin() + ",");
 			System.out.print(temp.getBook_menu() + ",");
 			System.out.print(temp.getBook_intro() + ",");
+			System.out.print(temp.getIntro_Author() + ",");
 		}
 	}
 

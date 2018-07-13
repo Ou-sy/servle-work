@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface IBookDAO {
-	public void getConnection() throws SQLException, ClassNotFoundException;//1.連線
-	
-	public String search() throws SQLException;//4.輸入查詢條件
+	public void getConnection() throws SQLException, ClassNotFoundException;// 1.連線
 
-	public List<bookBean> getAll(String search);//5.查詢資料
+	public String search() throws SQLException;// 4.輸入查詢條件
 
-	public void printResult(List<bookBean> bookData); //7.顯示資料	
+	public List<bookBean> getBook(String search);// 5.查詢書籍資料
 
-	public void closeConn() throws SQLException;//8.結束連線
-} 
+	public void printResult(List<bookBean> bookData); // 7.顯示產品+作者資料
+
+	public void closeConn() throws SQLException;// 8.結束連線
+}

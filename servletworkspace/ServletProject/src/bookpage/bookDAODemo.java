@@ -10,7 +10,7 @@ public class bookDAODemo {
 		wk.getConnection();
 		// 1
 
-		wk.printResult(wk.getAll(wk.search()));
+		wk.printResult(wk.getBook(wk.search()));
 
 		wk.closeConn();
 		// 8
